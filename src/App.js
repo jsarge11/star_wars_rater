@@ -3,6 +3,7 @@ import logo1 from './assets/starwars.png'
 import logo2 from './assets/movierater.png'
 import './App.css';
 import Axios from 'axios';
+import Movie from './components/Movie';
 
 class App extends Component {
   state = {
@@ -16,8 +17,8 @@ class App extends Component {
   render() {
     let films = this.state.films.map(item => {
       return (
-        <div key={item.title}>
-          {item.title}
+        <div key={item.title} id="movie-list-wrapper">
+          <Movie item={item} />
         </div>
       )
     })

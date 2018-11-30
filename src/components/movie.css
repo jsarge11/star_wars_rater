@@ -1,0 +1,17 @@
+.movie-wrapper {
+    padding: 20px;
+    margin: 5px;
+    background: white;
+    opacity: .7;
+}
+.show-more {
+    color: green;
+    cursor: pointer;
+}
+.show-less {
+    color: red;
+    cursor: pointer;
+}
+.show-more:hover {
+
+}
