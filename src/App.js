@@ -11,10 +11,15 @@ class App extends Component {
     films: []
   }
   componentDidMount() {
-    console.log('mounted');
-    Axios.get('https://swapi.co/api/films').then((res) => {
-      this.setState({ films: res.data.results })
-    })
+    if (localStorage.hasOwnProperty("films")) {
+      let value = JSON.parse(localStorage.getItem("films"));
+      this.setState({ films: value})
+    }
+    else {
+      Axios.get('https://swapi.co/api/films').then((res) => {
+        this.setState({ films: res.data.results })
+      })
+    }
   }
   onDragEnd = result => {
     const  {destination, source} = result;
@@ -32,7 +37,9 @@ class App extends Component {
     let newFilmArr = films.slice();
     newFilmArr.splice(source.index, 1);
     newFilmArr.splice(destination.index, 0, tempFilm);
-    this.setState({ films: newFilmArr });
+    this.setState({ films: newFilmArr }, () => {
+      localStorage.setItem("films", JSON.stringify(this.state.films));
+    });
 
   }
   render() {

@@ -8,6 +8,7 @@ import { Draggable } from 'react-beautiful-dnd'
 export default function Movie(props) {
     let { item, index } = props;
     const [isShown, changeShown] = useState(false);
+
     let date = formatDate(item.release_date)
     return (
         <Draggable draggableId={item.episode_id} index={index}>
