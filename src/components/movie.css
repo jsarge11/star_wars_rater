@@ -3,6 +3,8 @@
     margin: 5px;
     background: white;
     opacity: .7;
+    max-height: 100px;
+    transition: max-height 1s ease-in-out;
 }
 .show-more {
     color: green;
@@ -11,7 +13,4 @@
 .show-less {
     color: red;
     cursor: pointer;
-}
-.show-more:hover {
-
 }
