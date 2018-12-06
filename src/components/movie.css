@@ -14,3 +14,7 @@
     color: red;
     cursor: pointer;
 }
+.show-more:hover, .show-less:hover {
+    font-size: 20px;
+    font-weight: bold;
+}
