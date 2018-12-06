@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './movie.css'
 import { formatDate } from '../assets/functions/fns'
 import { Draggable } from 'react-beautiful-dnd'
+import Arrow from './Arrow/Arrow';
 
 
 export default function Movie(props) {
@@ -18,6 +19,7 @@ export default function Movie(props) {
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
             >
+                <Arrow/>
                 <h1>{index + 1}. &nbsp; </h1>
                     <h1>{item.title}</h1>
                     {isShown ?
