@@ -19,7 +19,12 @@ export default function Movie(props) {
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
             >
-                <Arrow/>
+                <Arrow
+                index={props.index}
+                moveMovieHigher={props.moveMovieHigher}
+                moveMovieLower={props.moveMovieLower}
+
+                />
                 <h1>{index + 1}. &nbsp; </h1>
                     <h1>{item.title}</h1>
                     {isShown ?

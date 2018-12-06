@@ -42,11 +42,45 @@ class App extends Component {
     });
 
   }
+
+  moveMovieLower = (index) => {
+    let { films } = this.state;
+    if (index === films.length - 1) {
+      return;
+    }
+    let tempFilm = films[index];
+    let newFilmArr = films.slice();
+    newFilmArr.splice(index, 1);
+    newFilmArr.splice(index + 1, 0, tempFilm);
+    this.setState({ films: newFilmArr }, () => {
+      localStorage.setItem("films", JSON.stringify(this.state.films));
+    });
+  }
+
+  moveMovieHigher = (index) => {
+    let { films } = this.state;
+    if (index === 0) {
+      return;
+    }
+
+    let tempFilm = films[index];
+    let newFilmArr = films.slice();
+    newFilmArr.splice(index, 1);
+    newFilmArr.splice(index - 1, 0, tempFilm);
+    this.setState({ films: newFilmArr }, () => {
+      localStorage.setItem("films", JSON.stringify(this.state.films));
+    });
+
+  }
   render() {
     let films = this.state.films.map((item, index) => {
       return (
         <div key={item.episode_id} id="movie-list-wrapper">
-          <Movie item={item} index={index} />
+          <Movie
+          moveMovieHigher={this.moveMovieHigher}
+          moveMovieLower={this.moveMovieLower}
+          item={item}
+          index={index} />
         </div>
       )
     })
