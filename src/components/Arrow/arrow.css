@@ -2,7 +2,6 @@
     display: flex;
     position: relative;
     cursor: pointer;
-    margin-left: 10%;
 }
 .arrow {
     position: absolute;
