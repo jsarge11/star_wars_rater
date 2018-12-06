@@ -40,6 +40,8 @@ class App extends Component {
     this.setState({ films: newFilmArr }, () => {
       localStorage.setItem("films", JSON.stringify(this.state.films));
     });
+  }
+  onDragStart = (e) => {
 
   }
 
@@ -89,7 +91,10 @@ class App extends Component {
         <img src={logo1} alt="star wars text"/>
           <br/>
         <img src={logo2} alt="move rater text"/>
-        <DragDropContext onDragEnd={this.onDragEnd}>
+        <DragDropContext
+          onDragEnd={this.onDragEnd}
+          onDragStart={this.onDragStart}
+        >
           <Droppable droppableId="droppable-1">
             {(provided) => (
               <div

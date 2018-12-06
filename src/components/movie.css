@@ -3,7 +3,7 @@
     margin: 5px;
     background: white;
     opacity: .7;
-    max-height: 100px;
+    max-height: 200px;
     transition: max-height 1s ease-in-out;
 }
 .show-more {

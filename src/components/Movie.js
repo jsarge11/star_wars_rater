@@ -26,7 +26,7 @@ export default function Movie(props) {
 
                 />
                 <h1>{index + 1}. &nbsp; </h1>
-                    <h1>{item.title}</h1>
+                    <h1 id="item-title">{item.title}</h1>
                     {isShown ?
                     <span>
                             <span className="show-less" onClick={() => changeShown(false)}> -</span>
